@@ -15,32 +15,5 @@
 
 <ion-content padding>
   <img src="assets/imgs/logo.png" alt="Logo" class="logo">
-
-  <ion-card>
-    <ion-card-header>
-
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label floating>
-          Email Address
-        </ion-label>
-        <ion-input type="text">
-
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>
-          Password
-        </ion-label>
-        <ion-input type="password">
-
-        </ion-input>
-      </ion-item>
-    </ion-card-content>
-    <ion-row>
-      <button ion-button color="secondary" (click)="navigateToPage('RegisterPage')">Register</button>
-      <button ion-button color="primary" (click)="navigateToPage('TabsPage')">Login</button>
-    </ion-row>
-  </ion-card>
+  <app-login-form></app-login-form>
 </ion-content>

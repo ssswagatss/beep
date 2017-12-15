@@ -21,7 +21,4 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  navigateToPage(page: string) {
-    page === 'TabsPage' ? this.navCtrl.setRoot('TabsPage') : this.navCtrl.push(page);
-  }
 }
