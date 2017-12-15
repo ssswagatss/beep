@@ -22,6 +22,6 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   navigateToPage(page: string) {
-    page === 'InboxPage' ? this.navCtrl.setRoot('InboxPage') : this.navCtrl.push(page);
+    page === 'TabsPage' ? this.navCtrl.setRoot('TabsPage') : this.navCtrl.push(page);
   }
 }
