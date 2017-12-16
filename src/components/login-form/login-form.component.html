@@ -5,7 +5,7 @@
       <ion-label floating>
         Email Address
       </ion-label>
-      <ion-input type="text">
+      <ion-input type="email" [(ngModel)]="account.email">
 
       </ion-input>
     </ion-item>
@@ -13,13 +13,13 @@
       <ion-label floating>
         Password
       </ion-label>
-      <ion-input type="password">
+      <ion-input type="password" [(ngModel)]="account.password">
 
       </ion-input>
     </ion-item>
   </ion-card-content>
   <ion-row class="login-form__button">
     <button ion-button color="secondary" (click)="navigateToPage('RegisterPage')">Register</button>
-    <button ion-button color="primary" (click)="navigateToPage('TabsPage')">Login</button>
+    <button ion-button color="primary" (click)="login()">Login</button>
   </ion-row>
 </ion-card>
