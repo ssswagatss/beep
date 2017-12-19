@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
@@ -11,10 +11,13 @@ import { Account } from '../../models/account/account.interface'
 export class LoginFormComponent {
 
   account={} as Account;
+  @Output() loginStatus:EventEmitter<any>;
+
 
   constructor(private navCtrl: NavController, 
     private afAuth : AngularFireAuth, private toast:ToastController) {
     console.log('Hello LoginFormComponent Component');
+    this.loginStatus=new EventEmitter<any>();
   }
 
   navigateToPage(page: string) {
@@ -32,13 +35,15 @@ export class LoginFormComponent {
      }).present();
  
      console.log(result);
+     this.loginStatus.emit(result);
+
     }catch(e){
-      console.log('error',e);
       this.toast.create({
         message:e.message,
         duration:3000,
         position:'top'
       }).present();
+      this.loginStatus.emit(e);
     }
    }
 }
